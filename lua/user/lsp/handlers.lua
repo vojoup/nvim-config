@@ -56,11 +56,12 @@ local function lsp_keymaps(bufnr)
 	local keymap = vim.api.nvim_buf_set_keymap
 
 	-- Current word
-	keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts) -- Go to definition
+	keymap(bufnr, "n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- Go to definition
 	keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts) -- Hover
 	keymap(bufnr, "n", "rr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts) -- Rename
 	keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts) -- Code actions
 	keymap(bufnr, "n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts) -- Signature help
+	keymap(bufnr, "n", "fd", "<cmd>lua vim.diagnostic.open_float()<CR>", opts) -- Signature help
 
 	-- Current buffer
 	keymap(bufnr, "n", "<leader>wd", "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<CR>", opts) -- Open diagnostics
