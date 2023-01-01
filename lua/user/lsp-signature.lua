@@ -11,5 +11,5 @@ lsp_signature.setup({
 	},
 	hint_enable = false,
 	floating_window_off_x = 0,
-	floating_window_off_y = 2,
+	floating_window_off_y = 0,
 })
